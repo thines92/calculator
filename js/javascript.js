@@ -1,16 +1,3 @@
-function addition(x,y) {
-  document.getElementById("screen").innerHTML = x + y;
-}
-function subtract(x,y) {
-  document.getElementById("screen").innerHTML = x - y;
-}
-function multiply(x,y) {
-  document.getElementById("screen").innerHTML = x * y;
-}
-function divide(x,y) {
-  document.getElementById("screen").innerHTML = x / y;
-}
-
 var hasOperatorBeenClicked = false;
 
 var firstNumber = [];
@@ -32,22 +19,21 @@ function checkId(event) {
     }
     if ($(target).attr('class') == 'operator') {
       if (target.value == "=") {
-        switch (operatorType) {
-          case "+":
-            addition(firstNumber, secondNumber);
-            break;
-          case "-":
-            subtract(firstNumber, secondNumber);
-            break;
-          case "*":
-            multiply(firstNumber, secondNumber);
-            break;
-          case "/":
-            divide(firstNumber, secondNumber);
-            break;
-          default:
-            alert("Does not compute");
-            break;
+        operatorType.toString();
+        firstNumber = firstNumber.join("");
+        secondNumber = secondNumber.join("");
+        firstNumber = parseInt(firstNumber);
+        secondNumber = parseInt(secondNumber);
+        if (operatorType == "+") {
+          document.getElementById("screen").innerHTML = firstNumber + secondNumber;
+        } else if (operatorType == "-") {
+          document.getElementById("screen").innerHTML = firstNumber - secondNumber;
+        } else if (operatorType == "*") {
+          document.getElementById("screen").innerHTML = firstNumber * secondNumber;
+        } else if (operatorType == "/") {
+          document.getElementById("screen").innerHTML = firstNumber / secondNumber;
+        } else {
+          alert("does not compute");
         }
         hasOperatorBeenClicked = false;
       } else {
