@@ -10,7 +10,6 @@ function checkId(event) {
       document.getElementById("screen").innerHTML = number.first + number.operator + number.second;
     } else {
         if ($(target).attr('class') == "number") {
-          // firstNumber.push(target.value);
           number.first += target.value;
           document.getElementById("screen").innerHTML = number.first;
         }
@@ -42,6 +41,8 @@ function checkId(event) {
         }
     }
 }
+
+$("")
 
 $("input").click(function(event) {
     checkId(event);
