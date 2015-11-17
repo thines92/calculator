@@ -49,6 +49,11 @@ $(".clear").click(function() {
   document.getElementById("screen").innerHTML = "";
 })
 
+$(".delete").click(function() {
+  delete number.first;
+  document.getElementById("screen").innerHTML = number.first;
+})
+
 $("input").click(function(event) {
     checkId(event);
 });
