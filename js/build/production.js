@@ -2,6 +2,9 @@ var hasOperatorBeenClicked = false;
 
 var number = {first: "", second: "", operator: ""};
 
+var firstNumberCount = 0;
+var secondNumberCount = 0;
+
 function checkId(event) {
     var target = event.target;
 
@@ -10,7 +13,8 @@ function checkId(event) {
       document.getElementById("screen").innerHTML = number.first + number.operator + number.second;
     } else {
         if ($(target).attr('class') == "number") {
-          number.first += target.value;
+          number.first["'" + firstNumberCount + "'"] += target.value;
+          alert(number.first["0"])
           document.getElementById("screen").innerHTML = number.first;
         }
     }
