@@ -42,7 +42,12 @@ function checkId(event) {
     }
 }
 
-$("")
+$(".clear").click(function() {
+  number.first = "";
+  number.operator = "";
+  number.second = "";
+  document.getElementById("screen").innerHTML = "";
+})
 
 $("input").click(function(event) {
     checkId(event);
